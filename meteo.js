@@ -16,7 +16,7 @@ async function fetchData() {
     // call weather data display function
     displayWeatherData(apiUrl);
 
-    setInterval(() => displayWeatherData(apiUrl), 3600000); // update each hour (milliseconds)
+    setInterval(() => displayWeatherData(apiUrl), 3600000); // update for each hour (milliseconds)
   } catch {
     console.error(
       "Une erreur s'est produite lors de la récupération des données"
@@ -42,6 +42,7 @@ async function displayWeatherData(apiUrl) {
     weatherIcon.src = getWeatherIcon(weatherData.weather[0].icon);
     humidity.textContent = `Humidité : ${weatherData.main.humidity} %`;
     wind.textContent = `Vent : ${Math.round(weatherData.wind.speed)} km/h`;
+    // else
   } catch {
     console.error(
       "Une erreur s'est produite lors de la récupération des données météo"
